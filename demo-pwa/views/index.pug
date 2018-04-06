@@ -1,7 +1,20 @@
 extends layout
 
 block content
-  ul.collection
+  .jumbotron
+    h1.display-3 Hello, world!
+    p.lead This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.
+  .row
     each perso in persos
-      a(onClick=`see(${perso.id})`)
-        li.collection-item=perso.name
+      .col-sm-6.col-lg-2.col-md-3
+        .card(style="width: 12.3rem")
+          img.card-img-top(src=`${perso.images.md}` alt="Card image cap")
+          .card-body
+            h2.card-title=`${perso.name}`
+            .card-text=`${perso.appearance.gender}`
+            .card-text=`${perso.appearance.race}`
+            //- .card-text=`${perso.biography.alignment}`
+            button.btn.btn-primary(type="button") More Info
+            a(onClick=`see(${perso.id})`)
+        
+

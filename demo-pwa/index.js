@@ -15,6 +15,16 @@ express()
         res.render("index", { persos: response.data });
       });
   })
+  .get("/character", (req, res) => {
+    axios
+      .get(
+        "https://raw.githubusercontent.com/akabab/superhero-api/0.2.0/api/id/1.json"
+      )
+      .then(response => {
+        res.render("character", { perso: response.data });
+      });
+  })
+
   .get("/about", (req, res) => {
     res.render("about");
   })

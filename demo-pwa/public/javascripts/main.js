@@ -1,3 +1,7 @@
+$(".onClick").show(); {
+//   $(".jumbotron").show();
+// });
+
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("./service-worker.js").then(function() {
     console.log("Service Worker Registered");
@@ -13,18 +17,19 @@ function see(id) {
       console.log(res);
       document.getElementById("content").innerHTML = `
       <div class="row">
-      <div class="col s12 m6">
+      <div class="col-lg-6 col-md-6 col-sm-6">
         <div class="card">
           <div class="card-content card-image">
             <img src="${res.images.md}">
-
-            <span class="card-title">${res.name}</span>
-            <p>${res.name}</p>
           </div>
+        <div class="col-lg-6 col-md-6 col-sm-6">
+            <div class="row">      
+              <span>${res.name}</span>
+            </div>
         </div>
       </div>
     </div>
        
       `;
     });
-}
+  }
